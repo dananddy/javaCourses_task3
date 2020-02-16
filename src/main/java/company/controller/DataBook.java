@@ -4,8 +4,10 @@ import company.view.View;
 
 import java.util.Scanner;
 
+
+
 import static company.controller.RegexContainer.*;
-import static company.view.TextConstant.FIRST_NAME;
+import static company.view.TextConstant.*;
 
 public class DataBook {
 
@@ -43,10 +45,22 @@ public class DataBook {
 
         //String userInfoText = ((String.valueOf(View.getLang(languageIsUA)).equals("ua")) ? REGEX_FIRST_NAME_UKR : REGEX_FIRST_NAME_ENG );
 
-        this.firstName = utController.inputInfo(FIRST_NAME, REGEX_FIRST_NAME_ENG, languageIsUA);
-
+        this.firstName = utController.inputInfo(FIRST_NAME, inputRightLangFirstName(languageIsUA), languageIsUA);
+        this.lastName = utController.inputInfo();
 
     }
 
+    String inputRightLangFirstName(boolean lang){
+        String regex = (lang) ? REGEX_FIRST_NAME_UKR : REGEX_FIRST_NAME_ENG;
+        return regex;
+    }
+    String inputRightLangLastName(boolean lang){
+        String regex = (lang) ? REGEX_LAST_NAME_UKR : REGEX_LAST_NAME_ENG;
+        return regex;
+    }
+    String inputRightLangAdress(boolean lang){
+        String regex = (lang) ? REGEX_ADRESS_UKR : REGEX_ADRESS_ENG;
+        return regex;
+    }
 
 }
