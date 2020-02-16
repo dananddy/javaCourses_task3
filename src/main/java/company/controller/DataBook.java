@@ -4,6 +4,9 @@ import company.view.View;
 
 import java.util.Scanner;
 
+import static company.controller.RegexContainer.*;
+import static company.view.TextConstant.FIRST_NAME;
+
 public class DataBook {
 
     private View view;
@@ -36,6 +39,11 @@ public class DataBook {
     }
 
     public void InputeData(boolean languageIsUA){
+        UtilityController utController = new UtilityController(scanner, view);
+
+        //String userInfoText = ((String.valueOf(View.getLang(languageIsUA)).equals("ua")) ? REGEX_FIRST_NAME_UKR : REGEX_FIRST_NAME_ENG );
+
+        this.firstName = utController.inputInfo(FIRST_NAME, REGEX_FIRST_NAME_ENG, languageIsUA);
 
 
     }

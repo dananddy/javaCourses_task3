@@ -11,7 +11,7 @@ public class View {
     private static String MESSAGE_BUNDLE = "Messages";
     private static Locale country = new Locale("ua","UA");
 
-    public ResourceBundle getLang(boolean countryIsUA){
+    public static ResourceBundle getLang(boolean countryIsUA){
         final ResourceBundle langBundle =
                 ResourceBundle.getBundle(MESSAGE_BUNDLE, setLang(countryIsUA));
 
