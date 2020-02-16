@@ -43,10 +43,9 @@ public class DataBook {
     public void InputeData(boolean languageIsUA){
         UtilityController utController = new UtilityController(scanner, view);
 
-        //String userInfoText = ((String.valueOf(View.getLang(languageIsUA)).equals("ua")) ? REGEX_FIRST_NAME_UKR : REGEX_FIRST_NAME_ENG );
-
         this.firstName = utController.inputInfo(FIRST_NAME, inputRightLangFirstName(languageIsUA), languageIsUA);
-        this.lastName = utController.inputInfo();
+        this.lastName = utController.inputInfo(LAST_NAME, inputRightLangLastName(languageIsUA),languageIsUA);
+        this.middleName = utController.inputInfo(MIDDLE_NAME, inputRightLangMiddleName(languageIsUA),languageIsUA);
 
     }
 
@@ -55,6 +54,10 @@ public class DataBook {
         return regex;
     }
     String inputRightLangLastName(boolean lang){
+        String regex = (lang) ? REGEX_LAST_NAME_UKR : REGEX_LAST_NAME_ENG;
+        return regex;
+    }
+    String inputRightLangMiddleName(boolean lang){
         String regex = (lang) ? REGEX_LAST_NAME_UKR : REGEX_LAST_NAME_ENG;
         return regex;
     }
