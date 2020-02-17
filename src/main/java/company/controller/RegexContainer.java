@@ -24,4 +24,5 @@ public interface RegexContainer {
     String REGEX_ADRESS_ENG = "^[A-Z][a-z]{1,20}$";
 
     String REGEX_DATE = "^([0-3][0-9])[.]([0|1][0-9])[.]([1-2][0,9][0-9]{2})$";
+
 }

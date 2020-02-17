@@ -1,6 +1,7 @@
 package company.view;
 
 import java.util.Locale;
+
 import java.util.ResourceBundle;
 
 import static company.view.TextConstant.INPUT_STRING_DATA;
@@ -8,18 +9,18 @@ import static company.view.TextConstant.WRONG_INPUT_DATA;
 
 public class View {
 
-    private static String MESSAGE_BUNDLE = "Messages";
-    private static Locale country = new Locale("ua","UA");
+    private static String MESSAGE_BUNDLE = "language.properties";
 
     public static ResourceBundle getLang(boolean countryIsUA){
         final ResourceBundle langBundle =
                 ResourceBundle.getBundle(MESSAGE_BUNDLE, setLang(countryIsUA));
 
+
         return langBundle;
     }
     private static Locale setLang(boolean countryIsUA){
-        if(countryIsUA) return country;
-        else return country = new Locale("en");
+        if(countryIsUA) return new Locale("ua","UA");
+        else return new Locale("en");
     }
 
     public void printMessage(String message){ System.out.println(message); }
